@@ -31,7 +31,7 @@ export class ConductorService {
         return await this._autorRepository.find();
     }
 
-    async buscarAutores(nombresBuscar: string): Promise<ConductorEntity[]> {
+    async buscarConductores(nombresBuscar: string): Promise<ConductorEntity[]> {
         return await this._autorRepository.find({ nombres: Like('%' + nombresBuscar + '%') });
     }
 

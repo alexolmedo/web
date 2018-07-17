@@ -1,49 +1,22 @@
-import { Component, OnInit } from '@angular/core';
-import {AutoServicio} from "../servicios/auto.servicio";
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'app-libro',
+  selector: 'app-auto',
   templateUrl: './auto.component.html',
   styleUrls: ['./auto.component.scss']
 })
 export class AutoComponent implements OnInit {
 
-  autos = [];
-  items = 4;
-  paginas;
-  autosMostrar;
-  paginaActual: number = 1;
+  @Input() autoMarca: string;
+  @Input() autoModelo: string;
+  @Input() autoColor1: string;
+  @Input() autoColor2: string;
+  @Input() autoAnio: number;
 
-  constructor(private _libroServicio: AutoServicio) { }
+  constructor() {
+  }
 
   ngOnInit() {
-    this._libroServicio.getAutos().subscribe(
-      (result: any[]) => {
-        this.autos = result;
-        this.numeroPaginas();
-        this.autosVisualizar();
-      }
-    );
-  }
 
-  numeroPaginas() {
-    this.paginas = this.autos.length/this.items;
-    if(!Number.isInteger(this.paginas)) {
-      this.paginas = Number.parseInt(this.paginas + 1);
-    }
-  }
-
-  autosVisualizar() {
-    this.autosMostrar = this.autos.slice(this.paginaActual*this.items - this.items, this.paginaActual*this.items);
-  }
-
-  siguiente() {
-    this.paginaActual += 1;
-    this.autosVisualizar();
-  }
-
-  anterior() {
-    this.paginaActual -= 1;
-    this.autosVisualizar();
   }
 }

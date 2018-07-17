@@ -1,41 +1,16 @@
-<h3>Autos</h3>
+<div class="card">
+  <br>
+  <img class=".card-img-top align-self-center " src="https://freeiconshop.com/wp-content/uploads/edd/car-flat.png" alt="Libro" style="width: 100px">
+  <div class="row">
 
-<div class="row">
-  <div class="col">
-
-    <div class="card-deck row">
-
-      <div *ngFor="let auto of autosMostrar" class="col-sm-3">
-
-        <div class="card">
-          <br>
-          <img class=".card-img-top align-self-center " src="https://freeiconshop.com/wp-content/uploads/edd/car-flat.png" alt="Libro" style="width: 100px">
-          <div class="row">
-
-              <div class="card-body">
-                <p class="card-text">Marca: {{auto.nombreMarca}}</p>
-                <p class="card-text">Modelo: {{auto.nombreModelo}}</p>
-                <p class="card-text">Color Uno : {{auto.colorUno}}</p>
-                <p class="card-text">Color Dos : {{auto.colorDos}}</p>
-                <p class="card-text">Año: {{auto.anio}}</p>
-              </div>
-
-          </div>
-          <a href="#" class="btn btn-secondary align-self-center mb-2" style="width: 200px">Pedir Transferencia</a>
-        </div>
-
-      </div>
+    <div class="card-body">
+      <p class="card-text">Marca: {{autoMarca}}</p>
+      <p class="card-text">Modelo: {{autoModelo}}</p>
+      <p class="card-text">Color Uno : {{autoColor1}}</p>
+      <p class="card-text">Color Dos : {{autoColor2}}</p>
+      <p class="card-text">Año: {{autoAnio}}</p>
     </div>
-    <br>
-    <div class="row">
-      <div class="col-sm-1">
-        <button class="btn btn-secondary btn-sm hvr-buzz" (click)="anterior()" [disabled]="paginaActual === 1">Anterior</button>
-      </div>
-      <div class="col-sm-10">
-      </div>
-      <div class="col-sm-1">
-        <button class="btn btn-secondary btn-sm hvr-buzz" (click)="siguiente()" [disabled]="paginaActual === paginas">Siguiente</button>
-      </div>
-    </div>
+
   </div>
+  <button class="btn btn-secondary align-self-center mb-2" style="width: 200px">Pedir Transferencia</button>
 </div>

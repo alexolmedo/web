@@ -111,22 +111,22 @@ export class HomeComponent implements OnInit {
     this.usuariosMostrar = this.datosVisualizar(this.usuarios, this.paginaActualUsuario, this.itemsUsuarios)
   }
 
-  siguienteAutor() {
+  siguienteConductor() {
     this.paginaActualConductor += 1;
     this.conductoresMostrar = this.datosVisualizar(this.conductores, this.paginaActualConductor, this.itemsConductores)
   }
 
-  anteriorAutor() {
+  anteriorConductor() {
     this.paginaActualConductor -= 1;
     this.conductoresMostrar = this.datosVisualizar(this.conductores, this.paginaActualConductor, this.itemsConductores)
   }
 
-  siguienteLibro() {
+  siguienteAuto() {
     this.paginaActualAuto += 1;
     this.autosMostrar = this.datosVisualizar(this.autos, this.paginaActualAuto, this.itemsAutos)
   }
 
-  anteriorLibro() {
+  anteriorAuto() {
     this.paginaActualAuto -= 1;
     this.autosMostrar = this.datosVisualizar(this.autos, this.paginaActualAuto, this.itemsAutos)
   }

@@ -1,7 +1,9 @@
+<link href="https://ianlunn.github.io/Hover/css/hover.css" rel="stylesheet">
 <div class="container">
   <nav class="navbar d-flex justify-content-end">
     <form class="navbar-brand">
-      <img src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-shadow-circle-512.png" width="30" height="30" alt="">
+      <img src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-shadow-circle-512.png" width="30" height="30"
+           alt="">
       Alexander Olmedo
     </form>
   </nav>
@@ -9,7 +11,8 @@
     <div class="col">
       <form class="form-group row">
         <div class="col-sm-10">
-          <input class="form-control" type="search" placeholder="Buscar Usuario, Conductor o Modelo" aria-label="Search">
+          <input class="form-control" type="search" placeholder="Buscar Usuario, Conductor o Modelo" aria-label="Search"
+                 [(ngModel)]="nombreBuscar" name="Search">
         </div>
         <button class="btn btn-success col-sm-2" type="submit" (click)="buscar()">Buscar</button>
       </form>
@@ -18,13 +21,109 @@
   </div>
   <br>
   <br>
-  <app-usuario></app-usuario>
+
+  <h3>Usuarios</h3>
+  <div class="row">
+
+    <div class="col">
+
+      <div class="row">
+        <div *ngFor="let usuario of usuariosMostrar" class="col-sm-3">
+
+          <app-usuario [usuarioNombres]="usuario.nombreUsuario"
+                       [usuarioApellidos]="usuario.apellidoUsuario"></app-usuario>
+
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-sm-1">
+          <button class="btn btn-secondary btn-sm hvr-buzz" (click)="anteriorUsuario()"
+                  [disabled]="paginaActualUsuario === 1">
+            Anterior
+          </button>
+        </div>
+        <div class="col-sm-10">
+        </div>
+        <div class="col-sm-1">
+          <button class="btn btn-secondary btn-sm hvr-buzz" (click)="siguienteUsuario()"
+                  [disabled]="paginaActualUsuario === paginasUsuarios">
+            Siguiente
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
   <br>
   <br>
-  <app-autor></app-autor>
+
+  <h3>Conductores</h3>
+  <div class="row">
+    <div class="col">
+      <div class="card-deck row mt-3">
+        <div *ngFor="let conductor of conductoresMostrar">
+
+          <app-conductor [conductorNombres]="conductor.nombres" [conductorApellidos]="conductor.apellidos"
+                     [conductorFechaNacimiento]="conductor.fechaNacimiento"
+                     [conductorNumeroAutos]="conductor.numeroAutos"
+                     [conductorLicenciaValida]="conductor.licenciaValida"></app-conductor>
+
+        </div>
+
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-sm-1">
+          <button class="btn btn-secondary btn-sm hvr-buzz" (click)="anteriorConductor()"
+                  [disabled]="paginaActualConductor === 1">
+            Anterior
+          </button>
+        </div>
+        <div class="col-sm-10">
+        </div>
+        <div class="col-sm-1">
+          <button class="btn btn-secondary btn-sm hvr-buzz" (click)="siguienteConductor()"
+                  [disabled]="paginaActualConductor === paginasConductores">
+            Siguiente
+          </button>
+        </div>
+      </div>
+
+    </div>
+    <br>
+
+  </div>
+
   <br>
   <br>
-  <app-libro></app-libro>
+  <h3>Autos</h3>
+
+  <div class="row">
+    <div class="col">
+      <div class="card-deck row">
+
+          <div div *ngFor="let auto of autosMostrar">
+            <app-auto [autoMarca]="auto.nombreMarca" [autoModelo]="auto.nombreModelo" [autoColor1]="auto.colorUno" [autoColor2]="auto.autoColor2" [autoAnio]="auto.anio"></app-auto>
+          </div>
+
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-sm-1">
+          <button class="btn btn-secondary btn-sm hvr-buzz" (click)="anteriorAuto()"
+                  [disabled]="paginaActualAuto === 1">Anterior
+          </button>
+        </div>
+        <div class="col-sm-10">
+        </div>
+        <div class="col-sm-1">
+          <button class="btn btn-secondary btn-sm hvr-buzz" (click)="siguienteAuto()"
+                  [disabled]="paginaActualAuto === paginasAutos">Siguiente
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
   <br>
 
 </div>

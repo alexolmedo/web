@@ -34,7 +34,7 @@ export  class ConductorController {
         @Param() paramParams,
         @Res() response
     ) {
-        const conductores = await this._conductorService.buscarAutores(paramParams.nombresBuscar);
+        const conductores = await this._conductorService.buscarConductores(paramParams.nombresBuscar);
         return response.status(202).send(conductores);
     }
 
