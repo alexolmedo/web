@@ -2,13 +2,17 @@
   <div class="col-sm-1">
 
   </div>
-  <div class="col-sm-10">
+  <div class="col">
     <h3>Autos</h3>
-    <div class="row">
+    <div class="card-deck row">
+
       <div *ngFor="let auto of autosMostrar" class="col-sm-3">
+
         <div class="card">
+          <br>
+          <img class=".card-img-top align-self-center " src="https://freeiconshop.com/wp-content/uploads/edd/car-flat.png" alt="Libro" style="width: 100px">
           <div class="row">
-            <div class="col-sm-8">
+
               <div class="card-body">
                 <p class="card-text">Marca: {{auto.nombreMarca}}</p>
                 <p class="card-text">Modelo: {{auto.nombreModelo}}</p>
@@ -16,10 +20,7 @@
                 <p class="card-text">Color Dos : {{auto.colorDos}}</p>
                 <p class="card-text">Año: {{auto.anio}}</p>
               </div>
-            </div>
-            <div class="col-sm-4">
-              <img class="card-img" src="https://freeiconshop.com/wp-content/uploads/edd/car-flat.png" alt="Libro" style="width: 100px">
-            </div>
+
           </div>
           <a href="#" class="btn btn-secondary align-self-center" style="width: 200px">Pedir Transferencia</a>
         </div>
@@ -31,7 +32,7 @@
       <div class="col-sm-2">
         <button (click)="anterior()" [disabled]="paginaActual === 1">Anterior</button>
       </div>
-      <div class="col-sm-6">
+      <div class="col-sm-7">
       </div>
       <div class="col-sm-2 ml-auto">
         <button (click)="siguiente()" [disabled]="paginaActual === paginas">Siguiente</button>
