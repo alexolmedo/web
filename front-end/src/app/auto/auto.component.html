@@ -1,9 +1,8 @@
-<div class="row">
-  <div class="col-sm-1">
+<h3>Autos</h3>
 
-  </div>
+<div class="row">
   <div class="col">
-    <h3>Autos</h3>
+
     <div class="card-deck row">
 
       <div *ngFor="let auto of autosMostrar" class="col-sm-3">
@@ -22,24 +21,21 @@
               </div>
 
           </div>
-          <a href="#" class="btn btn-secondary align-self-center" style="width: 200px">Pedir Transferencia</a>
+          <a href="#" class="btn btn-secondary align-self-center mb-2" style="width: 200px">Pedir Transferencia</a>
         </div>
 
       </div>
     </div>
     <br>
     <div class="row">
-      <div class="col-sm-2">
+      <div class="col-sm-1">
         <button (click)="anterior()" [disabled]="paginaActual === 1">Anterior</button>
       </div>
-      <div class="col-sm-7">
+      <div class="col-sm-10">
       </div>
-      <div class="col-sm-2 ml-auto">
+      <div class="col-sm-1">
         <button (click)="siguiente()" [disabled]="paginaActual === paginas">Siguiente</button>
       </div>
     </div>
-  </div>
-  <div class="col-sm-1">
-
   </div>
 </div>
