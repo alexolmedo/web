@@ -21,4 +21,9 @@ export class AutoServicio {
     let header = AutoServicio.getCommonHeaders();
     return this.http.get("http://localhost:3000/Auto",{headers: header});
   }
+
+  getAutoBuscar(nombreBuscar) {
+    let header = AutoServicio.getCommonHeaders();
+    return this.http.get(`http://localhost:3000/Auto/${nombreBuscar}` , {headers: header});
+  }
 }

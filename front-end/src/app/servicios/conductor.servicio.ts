@@ -21,4 +21,9 @@ export class ConductorServicio {
     let header = ConductorServicio.getCommonHeaders();
     return this.http.get("http://localhost:3000/Conductor",{headers: header});
   }
+
+  getConductorBuscar(nombreBuscar) {
+    let header = ConductorServicio.getCommonHeaders();
+    return this.http.get(`http://localhost:3000/Conductor/${nombreBuscar}` , {headers: header});
+  }
 }
